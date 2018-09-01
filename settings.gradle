@@ -1,0 +1,5 @@
+rootProject.name = 'TRProject-test'
+
+include "eureka-server"
+include "user-service"
+include "zuul"
