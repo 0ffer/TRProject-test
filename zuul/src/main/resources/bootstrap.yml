@@ -76,6 +76,15 @@ eureka:
 
 zuul:
   routes:
-    user-service:
+    users:
       path: /users/**
       serviceId: user-service
+      stripPrefix: false
+    roles:
+      path: /roles/**
+      serviceId: user-service
+      stripPrefix: false
+    docs:
+      path: /docs/**
+      serviceId: user-service
+      stripPrefix: true

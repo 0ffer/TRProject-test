@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 import io.swagger.annotations.Api;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
@@ -20,21 +21,7 @@ import static springfox.documentation.builders.RequestHandlerSelectors.withClass
 
 @EnableEurekaClient
 @SpringBootApplication
-@EnableSwagger2
 public class UserServiceApplication {
-
-    @Bean
-    public Docket docket() {
-        ApiSelectorBuilder apiSelectorBuilder = new Docket(DocumentationType.SWAGGER_2).select();
-        apiSelectorBuilder.apis(withClassAnnotation(Api.class));
-        return apiSelectorBuilder
-                .build()
-                .pathMapping("/")
-                .useDefaultResponseMessages(false)
-                .apiInfo(new ApiInfo("User Service API Doc", "User Service API Doc", "1.0", "",
-                        new Contact("Stas", "", "melnichuk.stas@gmail.com"), null, null))
-                .forCodeGeneration(true);
-    }
 
     @Configuration
     public static class SecurityPermitAllConfig extends WebSecurityConfigurerAdapter {

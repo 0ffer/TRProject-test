@@ -4,10 +4,17 @@ eureka-server:
   ports:
     - "8761:8761"
 
+db:
+  image: postgres
+  restart: always
+  environment:
+    POSTGRES_PASSWORD: postgres
+
 user-service:
   image:  trproject-test/user-service
   links:
     - "eureka-server"
+    - "db"
 
 zuul:
   image:  trproject-test/zuul
