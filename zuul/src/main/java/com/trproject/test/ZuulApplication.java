@@ -1,4 +1,4 @@
-package net.devh;
+package com.trproject.test;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,11 +8,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-/**
- * User: Michael
- * Email: yidongnan@gmail.com
- * Date: 2016/6/3
- */
 @EnableEurekaClient
 @EnableZuulProxy
 @SpringBootApplication

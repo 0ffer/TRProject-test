@@ -1,4 +1,4 @@
-package net.devh;
+package com.trproject.test;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,7 +10,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableEurekaServer
 @SpringBootApplication
 public class EurekaServeApplication {
-
 
     @Configuration
     public static class SecurityPermitAllConfig extends WebSecurityConfigurerAdapter {

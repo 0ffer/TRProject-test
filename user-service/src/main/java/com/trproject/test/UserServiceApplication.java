@@ -1,5 +1,4 @@
-package net.devh;
-
+package com.trproject.test;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -28,12 +27,12 @@ public class UserServiceApplication {
     public Docket docket() {
         ApiSelectorBuilder apiSelectorBuilder = new Docket(DocumentationType.SWAGGER_2).select();
         apiSelectorBuilder.apis(withClassAnnotation(Api.class));
-        return apiSelectorBuilder // FIXME Разобраться!!
+        return apiSelectorBuilder
                 .build()
                 .pathMapping("/")
                 .useDefaultResponseMessages(false)
-                .apiInfo(new ApiInfo("Service A API Doc", "User Service API Doc", "1.0", "",
-                        new Contact("Stas", "", ""), null, null)) // TODO Сделать описание!
+                .apiInfo(new ApiInfo("User Service API Doc", "User Service API Doc", "1.0", "",
+                        new Contact("Stas", "", "melnichuk.stas@gmail.com"), null, null))
                 .forCodeGeneration(true);
     }
 

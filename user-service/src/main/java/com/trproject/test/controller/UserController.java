@@ -1,4 +1,4 @@
-package net.devh.controller;
+package com.trproject.test.controller;
 
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;

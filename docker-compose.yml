@@ -1,12 +1,3 @@
-rabbitmq:
-  image: rabbitmq:3-management
-  ports:
-    - "4369:4369"
-    - "5671:5671"
-    - "5672:5672"
-    - "25672:25672"
-    - "15672:15672"
-
 eureka-server:
   image:  trproject-test/eureka-server
   hostname: eureka-server
@@ -17,7 +8,6 @@ user-service:
   image:  trproject-test/user-service
   links:
     - "eureka-server"
-    - "rabbitmq"
 
 zuul:
   image:  trproject-test/zuul
@@ -26,4 +16,3 @@ zuul:
   links:
     - "eureka-server"
     - "user-service"
-    - "rabbitmq"
